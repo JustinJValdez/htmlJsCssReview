@@ -1,0 +1,101 @@
+/* least specific actual element*/
+
+
+/* 3rd most specific classes  */
+/* .body{
+    background-color: orange;
+} */
+
+/* 2nd most specific id  */
+/* #body{
+    background-color: green;
+} */
+
+/* Inline styling is the most specific */
+
+
+body {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://gallery.yopriceville.com/var/albums/Backgrounds/Sweet_Home_Background.jpg?m=1449794760');
+    height: 100vh;
+}
+
+form {
+    width: 320px;
+    min-width: 320px;
+    margin: auto;
+    background: rgba(237, 237, 237, .8);
+    padding: 20px;
+    margin-top: 200px;
+    border-radius: 4px;
+    text-align: center;
+}
+.h1 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 32px;
+    font-family: sans-serif;
+}
+.login-header{
+    color: rgb(42, 80, 129);
+    margin-bottom: 47px;
+}
+
+.input-login {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.input-login input {
+    border: none;
+    width: 100%;
+    margin: auto;
+    font-size: 14px;
+    padding: 3px;
+    /* padding-left: 10px; */
+    background: transparent;
+    border-bottom: 1px solid rgb(42, 80, 129);
+}
+
+a {
+    border: none;
+    font-size: 30px;
+    padding: 3px 40px;
+    color: rgb(42, 80, 129);
+    font-weight: bold;
+    background: grey;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+#email-input{
+    margin-top: 10px;
+}
+#game-body{
+    background-image: none;
+    background-color: black;
+    text-align: center;
+}
+.game-title{
+    color: white;
+    font-size: 100px;
+    font-family: sans-serif
+}
+
+.game-button:hover{
+    cursor: pointer;
+}
+
+.game-button{
+    font-size: 30px;
+    border:none;
+    border-radius: 4px;
+    padding:20px;
+    width: 50%;
+    outline: none;
+    margin-top: 20px;
+}

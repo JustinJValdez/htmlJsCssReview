@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body id="game-body">
+    <h1 id="game-title" class="game-title">Stop The Color On Red</h1>
+    <button class="game-button" id="start-stop-button" onclick="start()">Start</button>
+    <button class="game-button" id="Reset-button" onclick="reset()">Reset</button>
+    <script src="index.js"></script>
+</body>
+
+<script>
+
+    const colors = ['black', 'red', 'Orange', 'Yellow', 'Blue', 'Purple', 'Pink', 'White',]
+
+    let interval;
+    let i = 0;
+    let time = 1000;
+    const reset = () => {
+        document.getElementById('start-stop-button').innerHTML = "Start";
+        clearInterval(interval);
+        i = 0;
+        document.getElementById('game-body').style.background = 'black';
+        document.getElementById('start-stop-button').style.background = `white`;
+        document.getElementById('start-stop-button').style.color = `black`;
+        document.getElementById('game-title').style.color = `white`;
+        time = 1000;
+    }
+    const start = () => {
+        if (document.getElementById('start-stop-button').innerHTML === `Start`) {
+            document.getElementById('Reset-button').style.display = 'none';
+            document.getElementById('start-stop-button').innerHTML = "STOP";
+            interval = setInterval(() => {
+                i++
+                if (i > colors.length - 1) {
+                    i = 0;
+                }
+                document.getElementById('game-body').style.background = colors[i];
+                switch (document.getElementById('game-body').style.background) {
+                    case 'white':
+                    case 'yellow':
+                    case 'pink':
+                        document.getElementById('start-stop-button').style.background = `black`;
+                        document.getElementById('start-stop-button').style.color = `white`;
+                        document.getElementById('game-title').style.color = `black`;
+                        break;
+                    default:
+                        document.getElementById('start-stop-button').style.background = `white`;
+                        document.getElementById('start-stop-button').style.color = `black`;
+                        document.getElementById('game-title').style.color = `white`;
+                        break;
+                }
+            }, time)
+        } else {
+            if (document.getElementById('game-body').style.background == "red") {
+                alert('You win!!!!!!')
+                time -= 200
+            } else {
+                alert('You Loose!!!!!')
+                time += 200
+            }
+            document.getElementById('Reset-button').style.display = '';
+            document.getElementById('start-stop-button').innerHTML = "Start";
+            clearInterval(interval);
+        }
+
+    }    
+</script>
+
+</html>
